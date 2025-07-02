@@ -93,71 +93,109 @@ const FlightSearch: React.FC<{ title: string }> = ({ title }) => {
         )}
       </div>
 
-      <div className={styles.searchForm}>
-        <input
-          type="text"
-          placeholder="From"
-          value={fromCity}
-          onChange={(e) => setFromCity(e.target.value)}
-        />
-        <button onClick={swapCities}>⇄</button>
-        <input
-          type="text"
-          placeholder="To"
-          value={toCity}
-          onChange={(e) => setToCity(e.target.value)}
-        />
+<div className={styles.searchForm}>
+  <div className={styles.formFields}>
+    <div className={`${styles.fieldGroup} ${styles.fromField}`}>
+      <label>From</label>
+      <input
+        type="text"
+        placeholder="Departure"
+        value={fromCity}
+        onChange={(e) => setFromCity(e.target.value)}
+      />
+    </div>
+
+    <button className={styles.swapButton} onClick={swapCities}>
+      ⇄
+    </button>
+
+    <div className={`${styles.fieldGroup} ${styles.toField}`}>
+      <label>To</label>
+      <input
+        type="text"
+        placeholder="Arrival"
+        value={toCity}
+        onChange={(e) => setToCity(e.target.value)}
+      />
+    </div>
+
+    <div className={`${styles.fieldGroup} ${styles.dateField}`}>
+      <label>Depart</label>
+      <input
+        type="date"
+        value={departureDate}
+        onChange={(e) => setDepartureDate(e.target.value)}
+      />
+    </div>
+
+    {selectedTripType === 'Return' && (
+      <div className={`${styles.fieldGroup} ${styles.dateField}`}>
+        <label>Return</label>
         <input
           type="date"
-          value={departureDate}
-          onChange={(e) => setDepartureDate(e.target.value)}
+          value={returnDate}
+          onChange={(e) => setReturnDate(e.target.value)}
         />
-        {selectedTripType === 'Return' && (
-          <input
-            type="date"
-            value={returnDate}
-            onChange={(e) => setReturnDate(e.target.value)}
-          />
-        )}
-        <div className={styles.travellersField}>
-          <span onClick={() => setShowTravellersDropdown(!showTravellersDropdown)}>
-            {getTravellersText()}
-          </span>
-          {showTravellersDropdown && (
-            <div className={styles.dropdown}>
-              <div>
-                Adults:
+      </div>
+    )}
+
+    <div className={`${styles.fieldGroup} ${styles.travellersField}`}>
+      <label>Travellers and cabin class</label>
+      <div className={styles.travellersDropdownField}>
+        <span
+          className={styles.travellersDisplay}
+          onClick={() => setShowTravellersDropdown(!showTravellersDropdown)}
+        >
+          {getTravellersText()}
+        </span>
+        {showTravellersDropdown && (
+          <div className={styles.dropdown}>
+            <div className={styles.passengerRow}>
+              <span>Adults:</span>
+              <div className={styles.counterControls}>
                 <button onClick={() => setAdults(Math.max(1, adults - 1))}>-</button>
-                {adults}
+                <span className={styles.count}>{adults}</span>
                 <button onClick={() => setAdults(adults + 1)}>+</button>
               </div>
-              <div>
-                Children:
+            </div>
+            <div className={styles.passengerRow}>
+              <span>Children:</span>
+              <div className={styles.counterControls}>
                 <button onClick={() => setChildren(Math.max(0, children - 1))}>-</button>
-                {children}
+                <span className={styles.count}>{children}</span>
                 <button onClick={() => setChildren(children + 1)}>+</button>
               </div>
-              <div>
-                Infants:
+            </div>
+            <div className={styles.passengerRow}>
+              <span>Infants:</span>
+              <div className={styles.counterControls}>
                 <button onClick={() => setInfants(Math.max(0, infants - 1))}>-</button>
-                {infants}
+                <span className={styles.count}>{infants}</span>
                 <button onClick={() => setInfants(infants + 1)}>+</button>
               </div>
-              <div>
-                Cabin Class:
-                <select value={selectedCabinClass} onChange={(e) => setSelectedCabinClass(e.target.value)}>
-                  <option>Economy</option>
-                  <option>Premium Economy</option>
-                  <option>Business</option>
-                  <option>First</option>
-                </select>
-              </div>
             </div>
-          )}
-        </div>
-
-        <button onClick={onSearchFlight}>Search Flights</button>
+            <div className={styles.cabinClassRow}>
+              <label>Cabin Class:</label>
+              <select 
+                value={selectedCabinClass} 
+                onChange={(e) => setSelectedCabinClass(e.target.value)}
+              >
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First</option>
+              </select>
+            </div>
+          </div>
+        )}
       </div>
+    </div>
+  </div>
+
+  <button className={styles.searchButton} onClick={onSearchFlight}>
+    Search Flights
+  </button>
+</div>
     </div>
   );
 };
