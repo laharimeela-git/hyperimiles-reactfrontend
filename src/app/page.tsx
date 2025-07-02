@@ -25,9 +25,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       
-      <div>{renderTabContent()}</div>
+      {renderTabContent()}
     </div>
   );
 }

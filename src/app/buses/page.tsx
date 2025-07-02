@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './BusSearch.module.scss';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { MdSwapHoriz } from 'react-icons/md'; // ✅ Import swap icon
 
 const BusSearch: React.FC = () => {
   const router = useRouter();
@@ -12,7 +13,6 @@ const BusSearch: React.FC = () => {
   const [toCity, setToCity] = useState('');
   const [departureDate, setDepartureDate] = useState<string>('');
 
-  // Populate values from query string
   useEffect(() => {
     const from = searchParams.get('from');
     const to = searchParams.get('to');
@@ -35,6 +35,11 @@ const BusSearch: React.FC = () => {
     router.push(`/buses?${queryString}`);
   };
 
+  const handleSwap = () => {
+    setFromCity(toCity);
+    setToCity(fromCity);
+  };
+
   return (
     <div className={styles.busSearchContainer}>
       <form className={styles.busSearchBar} autoComplete="off" onSubmit={(e) => e.preventDefault()}>
@@ -47,6 +52,12 @@ const BusSearch: React.FC = () => {
             onChange={(e) => setFromCity(e.target.value)}
           />
         </div>
+
+        {/* Swap Icon */}
+        <div className={styles.swapButton} onClick={handleSwap}>
+          <MdSwapHoriz size={28} title="Swap Cities" />
+        </div>
+
         <div className={styles.busField}>
           <label>To</label>
           <input
@@ -56,6 +67,7 @@ const BusSearch: React.FC = () => {
             onChange={(e) => setToCity(e.target.value)}
           />
         </div>
+
         <div className={styles.busField}>
           <label>Departure Date</label>
           <input
@@ -64,6 +76,7 @@ const BusSearch: React.FC = () => {
             onChange={(e) => setDepartureDate(e.target.value)}
           />
         </div>
+
         <button
           type="button"
           className={styles.busSearchBtn}

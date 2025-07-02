@@ -51,6 +51,8 @@ const HotelSearch: React.FC = () => {
     router.push(`/hotels/search?${searchParams}`);
   };
 
+   
+
   const increase = (type: string) => {
     if (type === 'adults') setAdults(adults + 1);
     if (type === 'children') setChildren(children + 1);
