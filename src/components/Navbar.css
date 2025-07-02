@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 .navbar {
   background-color: #7ac1e4;
@@ -9,7 +10,7 @@
   padding: 10px 30px;
   margin-top: 0px;
   width: 100vw;
-  height: 40px;
+  height: 60px;
 }
 
 .logo {

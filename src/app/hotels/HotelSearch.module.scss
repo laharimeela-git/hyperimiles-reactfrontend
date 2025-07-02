@@ -18,64 +18,106 @@
   }
 
   .searchSection {
+    margin-top: 32px;
     max-width: 1400px;
-    margin: 0 auto;
+    margin-left: 20px;
+    // margin: 0 auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 
     form.hotelSearchForm {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
       align-items: flex-end;
+      gap: 16px;
 
       > div {
         display: flex;
         flex-direction: column;
-        min-width: 150px;
+        min-width: 180px;
+        flex: 1;
 
         label {
-          font-size: 13px;
-          font-weight: 500;
-          color: #444;
-          margin-bottom: 4px;
-          padding-left: 5px;
+          font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 6px;
+    padding-left: 5px;
         }
 
         input {
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-          font-size: 14px;
+           height: 48px;
+    padding: 10px 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    // background-color: red;
         }
       }
 
       .autoSuggest {
-        flex: 2.5;
-        min-width: 280px;
+         height: 48px;
+width: 100px;
+    padding: 10px 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+      flex: 2.5;
+        // min-width: 100px;
+         display: flex;
+  flex-direction: column;
       }
 
+      // .searchBtn {
+      //   height: 50px;
+      //   padding: 0 30px;
+      //   background: linear-gradient(135deg, #ea7909 0%, #da7c1e 100%);
+      //   color: white;
+      //   border: none;
+      //   border-radius: 8px;
+      //   font-size: 16px;
+      //   font-weight: 600;
+      //   cursor: pointer;
+      //   transition: all 0.3s ease;
+      //   align-self: flex-end;
+
+      //   &:hover {
+      //     transform: translateY(-1px);
+      //     box-shadow: 0 6px 20px rgba(236, 141, 46, 0.3);
+      //   }
+
+      //   &:active {
+      //     transform: translateY(0);
+      //   }
+      // }
       .searchBtn {
-        height: 50px;
-        padding: 0 28px;
-        background: linear-gradient(135deg, #ea7909 0%, #da7c1e 100%);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        font-weight: 600;
-        min-width: 150px;
-        margin-left: 15px;
-        transition: all 0.3s ease;
-        cursor: pointer;
+  height: 48px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #ea7909 0%, #da7c1e 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-        &:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 6px 20px rgba(236, 141, 46, 0.3);
-        }
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(236, 141, 46, 0.3);
+  }
 
-        &:active {
-          transform: translateY(0);
-        }
-      }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
 
       .travellersContainer {
         position: absolute;
@@ -139,7 +181,6 @@
     }
   }
 
-  // Responsive Design
   @media (max-width: 1200px) {
     .searchSection {
       max-width: 100%;

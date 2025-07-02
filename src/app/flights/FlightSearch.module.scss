@@ -27,7 +27,8 @@
       
       &:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        border-color: #000;
+        // box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
       }
     }
     
@@ -117,7 +118,7 @@
     
     // Swap button
     .swapButton {
-      background: #efad06;
+      background: #ffa726;
       color: white;
       border: none;
       border-radius: 50%;
@@ -132,16 +133,17 @@
       flex-shrink: 0;
       margin: 0 4px;
       align-self: end;
-      margin-bottom: 8px;
+      margin-bottom: 2px;
       
       &:hover {
         transform: rotate(180deg);
-        background: #d49506;
+        background: #fb8c00;
       }
       
       &:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(239, 173, 6, 0.25);
+        border-color: #000;
+        // box-shadow: 0 0 0 3px rgba(239, 173, 6, 0.25);
       }
     }
     
@@ -161,8 +163,8 @@
       
       &:focus {
         outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        // border-color: #007bff;
+        // box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
       }
       
       &::placeholder {
@@ -197,8 +199,8 @@
         
         &:focus {
           outline: none;
-          border-color: #007bff;
-          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        //   border-color: #007bff;
+        //   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
         }
       }
       
@@ -254,7 +256,7 @@
               
               &:focus {
                 outline: none;
-                box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+                // box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
               }
               
               &:active {
@@ -295,8 +297,8 @@
             
             &:focus {
               outline: none;
-              border-color: #007bff;
-              box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            //   border-color: #007bff;
+            //   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
             }
             
             &:hover {
@@ -324,13 +326,13 @@
       align-self: end;
       
       &:hover {
-        background: #efa805;
+        background: #fb8c00;
         transform: translateY(-1px);
       }
       
       &:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(226, 153, 9, 0.25);
+        // box-shadow: 0 0 0 3px rgba(226, 153, 9, 0.25);
       }
       
       &:active {
@@ -417,22 +419,23 @@
 // Dark mode support
 @media (prefers-color-scheme: dark) {
   .flightSearchContainer {
-    background: #2d3748;
+    // background: #2d3748;
+    margin-top: 32px;
     color: #e2e8f0;
     
     .tripTypeSection {
       button {
-        background: #4a5568;
-        border-color: #718096;
-        color: #e2e8f0;
+        background: #fafafa;
+        // border-color: #718096;
+        // color: #e2e8f0;
         
-        &:hover {
-          background: #718096;
-        }
+        // &:hover {
+        //   background: #718096;
+        // }
       }
       
       .dropdown {
-        background: #4a5568;
+        background: #fafafa;
         border-color: #718096;
         
         div:hover {
@@ -443,38 +446,38 @@
     
     .searchForm {
       .fieldGroup label {
-        color: #a0aec0;
+        // color: #a0aec0;
       }
       
       input[type="text"],
       input[type="date"] {
-        background: #4a5568;
+        background: #fafafa;
         border-color: #718096;
-        color: #e2e8f0;
+        // color: #e2e8f0;
         
         &::placeholder {
-          color: #a0aec0;
+        //   color: #a0aec0;
         }
         
-        &:focus {
-          border-color: #efad06;
-        }
+        // &:focus {
+        //   border-color: #efad06;
+        // }
       }
       
       .travellersDropdownField {
         .travellersDisplay {
-          background: #4a5568;
+          background: #fafafa;
           border-color: #718096;
-          color: #e2e8f0;
+          color: #6c7570;
           
-          &:hover,
-          &:focus {
-            border-color: #efad06;
-          }
+        //   &:hover,
+        //   &:focus {
+        //     border-color: #efad06;
+        //   }
         }
         
         .dropdown {
-          background: #4a5568;
+          background: #fafafa;
           border-color: #718096;
           
           .passengerRow {
@@ -501,13 +504,13 @@
             }
             
             select {
-              background: #4a5568;
-              border-color: #718096;
+              background: #fafafa;
+            //   border-color: #718096;
               color: #e2e8f0;
               
-              &:focus {
-                border-color: #efad06;
-              }
+            //   &:focus {
+            //     border-color: #efad06;
+            //   }
             }
           }
         }
